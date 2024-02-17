@@ -1,12 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react';
+import TabOption from '../components/common/tabOptions/tabOption';
+import Footer from '../components/common/footer/footer';
+import Header from '../components/common/header/header';
+import Delivery from '../components/delivery/delivery';
+import DiningOut from '../components/diningOut/diningOut';
+import Nightlife from '../components/nightlife/nightlife';
 
-const home = () => {
+const Home = () => {
+
+  const [activeTab, setActiveTab]= useState("Delivery")
+
+
   return (
     <div>
-      <header />
-      <home/>
+      <Header />
+      <TabOption activeTab={activeTab} setActiveTab={setActiveTab} />
+      {getCorrectScreen(activeTab)}
+      <Footer /> 
     </div>
-  )
+  );
 };
 
-export default home;
+const getCorrectScreen=(tab)=>{
+  switch(tab){
+    case "Delivery":
+      return <Delivery />
+    case "Dining Out":
+      return <DiningOut />
+    case "Nightlife":
+      return <Nightlife />
+      default:
+        return <Delivery />
+  
+}
+};
+
+export default Home;
