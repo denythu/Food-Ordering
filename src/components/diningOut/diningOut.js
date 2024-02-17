@@ -1,9 +1,9 @@
-import React from 'react';
-import "./diningOut.css"  
+import React from 'react'
+import "./diningOut.css";
 const DiningOut = () => {
   return (
     <div>
-      
+      v gbujiuvt
     </div>
   )
 }
